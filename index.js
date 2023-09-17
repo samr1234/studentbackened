@@ -1,11 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const dotenv = require('dotenv');
 const path = require("path");
 const fileRoutes = require('./Routes/fileRoutes');
-
+dotenv.config();
 const app = express();
-
+const MONGODB_URI = process.env.MONGO_URL;
 // Enable CORS
 app.use(cors({
   origin: 'http://localhost:3000',
@@ -13,7 +14,7 @@ app.use(cors({
 }));
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://harsh31:harsh31@cluster0.n8r2qgg.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

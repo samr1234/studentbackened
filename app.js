@@ -36,7 +36,7 @@ app.use('',StudentDataRoute);
 app.use('',notificationrouter);
 app.use('',filerouter);
 app.use('',Questionrouter);
-app.use("/", fileRoutes);
+app.use("/",fileRoutes);
 // app.use('',);
 //assign port
 var port = process.env.PORT || 3001;
